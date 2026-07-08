@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PanenStock - Platform Distribusi Terpadu</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons untuk icon yang modern -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- NAVIGASI UTAMA -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="sprout" class="text-green-600 w-8 h-8"></i>
+                    <span class="text-xl font-bold text-gray-900">Panen<span class="text-green-600">Stock</span></span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600">
+                    <a href="#kategori" class="hover:text-green-600 transition">Kategori Hub</a>
+                    <a href="#kurir" class="hover:text-green-600 transition">Layanan Kurir</a>
+                    <a href="#reseller" class="hover:text-green-600 transition">Program Reseller</a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button onclick="openModal('loginModal')" class="text-sm font-medium text-gray-600 hover:text-green-600">Masuk</button>
+                    <button onclick="openModal('registerModal')" class="text-sm font-medium text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg transition shadow-sm">Daftar</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="bg-gradient-to-br from-green-50 to-emerald-100 py-16 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">
+                Ekosistem Distribusi Agrobisnis & Pangan
+            </h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+                Menghubungkan sektor pertanian, peternakan, perikanan, produsen pakan, frozen food, hingga jaringan reseller dalam satu platform logistik terintegrasi.
+            </p>
+        </div>
+    </header>
+
+    <!-- TAMBAHAN: KOLOM BANNER SEWA IKLAN (Rapi & Selaras) -->
+    <section class="max-w-7xl mx-auto px-4 pt-6">
+        <div class="bg-gradient-to-r from-amber-500 to-orange-600 rounded-xl p-4 text-white shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="p-2 bg-white/20 rounded-lg hidden sm:block">
+                    <i data-lucide="megaphone" class="w-6 h-6 text-white"></i>
+                </div>
+                <div>
+                    <span class="bg-white/20 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">Slot Iklan Mitra</span>
+                    <h3 class="font-bold text-base mt-0.5">Sewa Banner Iklan Produk Anda Di Sini!</h3>
+                    <p class="text-orange-100 text-xs">Jangkau ribuan jaringan reseller, peternak, & petani lokal setiap hari.</p>
+                </div>
+            </div>
+            <button onclick="openModal('forgotModal')" class="w-full sm:w-auto bg-white hover:bg-orange-50 text-orange-700 font-bold px-4 py-2 rounded-lg text-xs transition whitespace-nowrap text-center shadow-xs">
+                Hubungi Admin Sewa
+            </button>
+        </div>
+    </section>
+
+    <!-- HUB KATEGORI UTAMA -->
+    <section id="kategori" class="max-w-7xl mx-auto px-4 py-12">
+        <h2 class="text-2xl font-bold text-gray-900 mb-8 flex items-center gap-2">
+            <i data-lucide="layout-grid" class="text-green-600"></i> Kategori Sektor
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            <!-- Item Kategori -->
+            <div class="bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition border border-gray-100 text-center cursor-pointer group">
+                <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-emerald-600 group-hover:text-white transition">
+                    <i data-lucide="wheat"></i>
+                </div>
+                <h3 class="font-semibold text-sm">Pertanian</h3>
+            </div>
+            <div class="bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition border border-gray-100 text-center cursor-pointer group">
+                <div class="w-12 h-12 bg-orange-50 text-orange-600 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-orange-600 group-hover:text-white transition">
+                    <i data-lucide="beef"></i>
+                </div>
+                <h3 class="font-semibold text-sm">Peternakan</h3>
+            </div>
+            <div class="bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition border border-gray-100 text-center cursor-pointer group">
+                <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-blue-600 group-hover:text-white transition">
+                    <i data-lucide="fish"></i>
+                </div>
+                <h3 class="font-semibold text-sm">Perikanan</h3>
+            </div>
+            <div class="bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition border border-gray-100 text-center cursor-pointer group">
+                <div class="w-12 h-12 bg-amber-50 text-amber-600 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-amber-600 group-hover:text-white transition">
+                    <i data-lucide="package"></i>
+                </div>
+                <h3 class="font-semibold text-sm">Pupuk & Pakan</h3>
+            </div>
+            <div class="bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition border border-gray-100 text-center cursor-pointer group">
+                <div class="w-12 h-12 bg-cyan-50 text-cyan-600 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-cyan-600 group-hover:text-white transition">
+                    <i data-lucide="snowflake"></i>
+                </div>
+                <h3 class="font-semibold text-sm">Frozen Food</h3>
+            </div>
+            <div class="bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition border border-gray-100 text-center cursor-pointer group">
+                <div class="w-12 h-12 bg-purple-50 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-purple-600 group-hover:text-white transition">
+                    <i data-lucide="users"></i>
+                </div>
+                <h3 class="font-semibold text-sm">Mitra Reseller</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- DASHBOARD INTEGRASI: KURIR & RESELLER -->
+    <section class="max-w-7xl mx-auto px-4 py-8 grid md:grid-cols-2 gap-8">
+        <!-- Fitur Logistik / Kurir -->
+        <div id="kurir" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+            <div class="flex items-center justify-between mb-6">
+                <div class="flex items-center gap-3">
+                    <div class="p-2 bg-blue-50 text-blue-600 rounded-lg">
+                        <i data-lucide="truck"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-gray-900">Manajemen Kurir & Armada</h3>
+                        <p class="text-xs text-gray-500">Pelacakan rantai dingin (cold chain) & logistik massal</p>
+                    </div>
+                </div>
+                <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">12 Aktif</span>
+            </div>
+            <!-- Progress Rute Pengiriman Simulasi -->
+            <div class="space-y-4">
+                <div class="p-4 bg-gray-50 rounded-xl border border-gray-100 text-sm">
+                    <div class="flex justify-between font-semibold mb-1">
+                        <span>Resi: #AD-90812 (Cold Storage Truk)</span>
+                        <span class="text-blue-600">Dalam Perjalanan</span>
+                    </div>
+                    <p class="text-gray-500 text-xs mb-3">Muatan: 2 Ton Frozen Food - Daging Sapi</p>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-blue-600 h-2 rounded-full" style="width: 70%"></div>
+                    </div>
+                </div>
+                <button class="w-full text-center text-sm font-medium text-blue-600 bg-blue-50 hover:bg-blue-100 py-2.5 rounded-xl transition">
+                    Buka Konsol Kurir
+                </button>
+            </div>
+        </div>
+
+        <!-- Fitur Reseller Hub -->
+        <div id="reseller" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+            <div class="flex items-center justify-between mb-6">
+                <div class="flex items-center gap-3">
+                    <div class="p-2 bg-purple-50 text-purple-600 rounded-lg">
+                        <i data-lucide="store"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-gray-900">Panel Suplai Reseller</h3>
+                        <p class="text-xs text-gray-500">Harga grosir tiering khusus untuk mitra dagang</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <div class="p-3 bg-purple-50/50 rounded-xl">
+                    <span class="text-xs text-gray-500 block">Minimal Order Pupuk</span>
+                    <span class="font-bold text-gray-800 text-sm">Diskon s.d 25%</span>
+                </div>
+                <div class="p-3 bg-emerald-50/50 rounded-xl">
+                    <span class="text-xs text-gray-500 block">Katalog Bahan Baku</span>
+                    <span class="font-bold text-gray-800 text-sm">Ready Stock Gudang</span>
+                </div>
+            </div>
+            <button class="w-full text-center text-sm font-medium text-purple-600 bg-purple-50 hover:bg-purple-100 py-2.5 rounded-xl transition">
+                Akses Katalog Reseller (White-Label)
+            </button>
+        </div>
+    </section>
+
+    <!-- CUSTOMER SERVICE CHAT WIDGET -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button onclick="toggleCS()" id="csButton" class="bg-green-600 hover:bg-green-700 text-white rounded-full p-4 shadow-xl flex items-center justify-center transition-transform hover:scale-105">
+            <i data-lucide="message-square" class="w-6 h-6"></i>
+        </button>
+
+        <div id="csWindow" class="hidden fixed bottom-24 right-6 w-80 md:w-96 bg-white rounded-2xl shadow-2xl border border-gray-100 flex flex-col overflow-hidden transition-all">
+            <div class="bg-green-600 p-4 text-white flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="relative">
+                        <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center font-bold">CS</div>
+                        <span class="absolute bottom-0 right-0 w-3 h-3 bg-emerald-400 border-2 border-white rounded-full"></span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm">PanenStock Support</h4>
+                        <p class="text-xs text-green-100">Online • Siap Membantu</p>
+                    </div>
+                </div>
+                <button onclick="toggleCS()" class="hover:bg-white/10 p-1 rounded transition">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <div class="p-4 flex-1 h-64 overflow-y-auto bg-gray-50 space-y-3 text-sm">
+                <div class="bg-white p-3 rounded-xl rounded-tl-none shadow-sm max-w-[85%] text-gray-700">
+                    Halo! Ada yang bisa kami bantu terkait distribusi pupuk, pakan, kuota reseller, atau kendala pengiriman kurir?
+                </div>
+            </div>
+            <div class="p-3 bg-white border-t border-gray-100 flex gap-2">
+                <input type="text" placeholder="Tulis pesan..." class="flex-1 border border-gray-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-green-600">
+                <button class="bg-green-600 text-white p-2 rounded-xl hover:bg-green-700 transition">
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL POPUP: LOGIN -->
+    <div id="loginModal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 relative shadow-xl">
+            <button onclick="closeModal('loginModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                <i data-lucide="x"></i>
+            </button>
+            <h3 class="text-xl font-bold text-gray-900 mb-6">Masuk ke PanenStock</h3>
+            <form class="space-y-4" onsubmit="event.preventDefault();">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-600 mb-1">EMAIL / NO. HANDPHONE</label>
+                    <input type="text" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-green-600" placeholder="contoh@agro.com">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-600 mb-1">KATA SANDI</label>
+                    <input type="password" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-green-600" placeholder="••••••••">
+                </div>
+                <!-- TAMBAHAN: Link Lupa Password yang Membuka Modal Pemulihan -->
+                <div class="text-right">
+                    <button type="button" onclick="closeModal('loginModal'); openModal('forgotModal');" class="text-xs text-green-600 font-medium hover:underline">Lupa Kata Sandi?</button>
+                </div>
+                <button class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-xl text-sm transition shadow-sm">
+                    Masuk Sekarang
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- TAMBAHAN: MODAL POPUP LUPA PASSWORD (Hanya ditambahkan tanpa merombak) -->
+    <div id="forgotModal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 relative shadow-xl">
+            <button onclick="closeModal('forgotModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                <i data-lucide="x"></i>
+            </button>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Pemulihan Kata Sandi</h3>
+            <p class="text-xs text-gray-500 mb-6">Masukkan email akun PanenStock Anda untuk menerima instruksi reset atau hubungi CS.</p>
+            <form class="space-y-4" onsubmit="event.preventDefault();">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-600 mb-1">EMAIL TERDAFTAR</label>
+                    <input type="email" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-green-600" placeholder="contoh@agro.com" required>
+                </div>
+                <button class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-xl text-sm transition shadow-sm">
+                    Kirim Tautan Verifikasi
+                </button>
+                <div class="text-center">
+                    <button type="button" onclick="closeModal('forgotModal'); openModal('loginModal');" class="text-xs text-gray-500 hover:text-green-600 transition font-medium"> Kembali ke Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL POPUP: REGISTRASI -->
+    <div id="registerModal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 relative shadow-xl">
+            <button onclick="closeModal('registerModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                <i data-lucide="x"></i>
+            </button>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Daftar Akun Mitra</h3>
+            <p class="text-xs text-gray-500 mb-6">Pilih jenis keanggotaan Anda untuk disesuaikan dengan fitur dasbor.</p>
+            <form class="space-y-4" onsubmit="event.preventDefault();">
+                <div class="grid grid-cols-2 gap-2">
+                    <label class="border border-gray-200 rounded-xl p-3 flex items-center gap-2 cursor-pointer hover:border-green-600 transition">
+                        <input type="radio" name="role" class="text-green-600 focus:ring-green-500" checked>
+                        <span class="text-xs font-medium text-gray-700">Produsen/Grosir</span>
+                    </label>
+                    <label class="border border-gray-200 rounded-xl p-3 flex items-center gap-2 cursor-pointer hover:border-green-600 transition">
+                        <input type="radio" name="role" class="text-green-600 focus:ring-green-500">
+                        <span class="text-xs font-medium text-gray-700">Reseller/Kurir</span>
+                    </label>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-600 mb-1">NAMA LENGKAP / BADAN USAHA</label>
+                    <input type="text" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-green-600" placeholder="PT. Agro Sukses Bersama">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-600 mb-1">NOMOR WHATSAPP</label>
+                    <input type="tel" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-green-600" placeholder="081234567xxx">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-600 mb-1">KATA SANDI BARU</label>
+                    <input type="password" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-green-600" placeholder="Minimal 8 karakter">
+                </div>
+                <button class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-xl text-sm transition shadow-sm">
+                    Buat Akun Akun
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- LOGIK INTERAKSI JAVASCRIPT -->
+    <script>
+        // Inisialisasi Lucide Icons
+        lucide.createIcons();
+
+        // Fungsi Toggle Customer Service Widget
+        function toggleCS() {
+            const csWindow = document.getElementById('csWindow');
+            csWindow.classList.toggle('hidden');
+        }
+
+        // Fungsi Manajeman Modal (Buka/Tutup)
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
